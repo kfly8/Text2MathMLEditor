@@ -1,9 +1,7 @@
 www:
-    type: perl-worker
-    approot: app
-    ports:
-        www: http
+    type: perl
     process: plackup app.psgi
     requirements:
+        - Amon2
         - Amon2::Lite
         - Text::ASCIIMathML
