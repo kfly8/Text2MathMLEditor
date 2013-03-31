@@ -59,18 +59,25 @@ __DATA__
       <div class="page-header">
         <h1>text2MathML</h1>
       </div>
-      <p>
-        <form method="POST">
-          <textarea name="raw_txt" id="raw_txt" rows=5 class="input-block-level help-block">[% raw_txt %]</textarea>
-          <input type="submit" class="btn btn-block">
-        </form>
-      </p>
-      <p>
-        <div id="preview_container" data-mathml=[% converted_txt %] >
-            [% converted_txt | mark_raw %]
+      <div class="row-fluid">
+        <div class="span4">
+          <form method="POST">
+            <textarea placeholder="E=mc^2" name="raw_txt" id="raw_txt" rows=10 class="input-block-level help-block">[% raw_txt %]</textarea>
+            <input type="submit" class="btn btn-block">
+          </form>
         </div>
-      </p>
+        <div class="span8 well">
+          <div id="preview_container" data-mathml=[% converted_txt %] >
+              [% converted_txt | mark_raw %]
+          </div>
+        </div>
+      </div>
     </div>
+    <footer>
+      <div class="container">
+        &copy; <a href="http://about.me/kfly8">kfly8</a>
+      </div>
+    </footer>
     <script text/javascript>
         (function($){
             $('#preview_container').on('click', function(){
